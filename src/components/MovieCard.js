@@ -1,4 +1,6 @@
 import React from 'react';
+import MovieShowPage from './MovieShowPage';
+import {Route, Link} from 'react-router-dom';
 
 
 
@@ -16,6 +18,7 @@ class MovieCard extends React.Component {
 
   handleButton = () => {
       console.log("you clicked me")
+     
   }
 
   render() {
@@ -34,7 +37,7 @@ class MovieCard extends React.Component {
                 <div className="extra content">
                     <p>{movie.release_year}</p>
                     <p>{movie.description}</p>
-                    <button onClick={this.handleButton}>More Info</button>
+                    <Link to={`/movies/${movie.id}`}>More Info</Link>
                 </div>
                 : null }
         </div>
