@@ -20,10 +20,10 @@ class ItemCard extends React.Component {
     let item = this.props.item
 
     return (
-        <div className="item card" onClick={this.handleClick}> 
+        <div className="item-card" onClick={this.handleClick}> 
 
-            <div className="image">
-                <img src={item.image} alt={item.name} />
+            <div >
+                <img className="item-image" src={item.image} alt={item.name} />
             </div>
             <div className="content">
                 <div className="header">{item.name}</div>

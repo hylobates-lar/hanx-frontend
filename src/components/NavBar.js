@@ -20,14 +20,15 @@ class NavBar extends React.Component {
 
     render(){
         return (
-            <div>
-                <h1>HANX!</h1>
-                <Link to='/movies'>Movies</Link>
+            <div id="header">
+                    <h1>HANX!</h1>
+               
+                    <Link to='/movies'>Movies</Link>
 
-                <Link to='/bio'>Bio</Link>
+                    <Link to='/bio'>Bio</Link>
 
-                <Link to='/items'>Items</Link>
-
+                    <Link to='/items'>Items</Link>
+                
                 
                 <Cart viewCart={this.state.viewCart} onClose={this.showModal}/>
                 <button onClick={e => {this.showModal()}}>View Cart</button>
