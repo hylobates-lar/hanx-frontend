@@ -25,10 +25,10 @@ class MovieCard extends React.Component {
     let movie = this.props.movie
 
     return (
-        <div className="movie card" onClick={this.handleClick}> 
+        <div className="movie-card" onClick={this.handleClick}> 
 
-            <div className="image">
-                <img src={movie.image} alt={movie.title} />
+            <div >
+                <img className="movie-image" src={movie.image} alt={movie.title} />
             </div>
             <div className="content">
                 <div className="header">{movie.title}</div>

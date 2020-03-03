@@ -1,3 +1,89 @@
+body {
+    margin: 0;
+    font-family: monospace;
+  }
+  
+  #header {
+    display: flex;
+    justify-content: center;
+    background: rgb(90, 107, 151);
+    opacity: .8;
+    height: 7rem;
+    padding: 1rem;
+  }
+
+
+/* bio page */
+
+.bio-container {
+    display: flex;
+}
+
+#bio-image {
+    width: 35rem;
+    padding: 20px;
+    background-position: center;
+    background-size: contain; 
+}
+
+#bio-content {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/* movies container */
+
+#movie-container {
+    margin: 2rem;
+  }
+
+  .movie-card {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 20rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #afafaf
+  }
+
+  .movie-image {
+    /* height: 100%; */
+    width: 15rem;
+    background-position: center;
+    background-size: contain; 
+  }
+
+/* merch items container */
+  
+  #item-container {
+    margin: 2rem;
+  }
+  
+  .item-card {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 20rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #afafaf
+  }
+  
+  .item-image {
+    /* height: 100%; */
+    width: 20rem;
+    background-position: center;
+    background-size: contain; 
+  }
+
+
+/* pop up cart modal styling */
+
 #modal {
     position: fixed;
     z-index: 1;
@@ -13,17 +99,26 @@
     background-color: rgb(255, 255, 255);
     width: 500px;
     margin: 20vh auto 0;
-    padding: 20px;
+    padding-top: 10px;
     border-radius: 20px;
     text-align: center;
     transition: 1.1s ease-out;  
   }
 
+  h2 {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0;
+  }
+
   .actions {
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
     background: #eee;
     padding: 0.5rem 1rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
+
 
 .toggle-button {
     border: 0;

@@ -23,7 +23,7 @@ class ItemContainer extends React.Component {
 
   render() {
     return (
-        <div> 
+        <div id="item-container"> 
             {this.state.items.map(item => {
                 return < ItemCard item={item} key={item.id} />    
             })}
