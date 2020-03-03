@@ -5,7 +5,7 @@ class Bio extends React.Component {
     render () {
         return (
             <div>
-                <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-17205-20121120-tom-hanks-1169-624x420-1353452177.jpg?resize=1800,1200&w=1200" alt="T.Hanks"/>
+                <img id="bio image" src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-17205-20121120-tom-hanks-1169-624x420-1353452177.jpg?resize=1800,1200&w=1200" alt="T.Hanks"/>
                 <p>Thomas Jeffrey Hanks (born July 9, 1956) is an American actor and filmmaker. Hanks is known for his comedic and dramatic roles in such films as Splash (1984), Bachelor Party (1984), Big (1988), Turner & Hooch (1989), A League of Their Own (1992), Sleepless in Seattle (1993), Forrest Gump (1994), Apollo 13 (1995), You've Got Mail (1998), The Green Mile (1999), Cast Away (2000), Road to Perdition (2002), Cloud Atlas (2012), Captain Phillips (2013), Saving Mr. Banks (2013), Sully (2016), and A Beautiful Day in the Neighborhood (2019). He has also starred in the Robert Langdon films, and he voices Sheriff Woody in the Toy Story film series. He is one of the most popular and recognizable film stars worldwide, and is widely regarded as an American cultural icon.
                 
                 Hanks has collaborated with film director Steven Spielberg on five films to date: Saving Private Ryan (1998), Catch Me If You Can (2002), The Terminal (2004), Bridge of Spies (2015), and The Post (2017), as well as the 2001 miniseries Band of Brothers, which launched Hanks as a successful director, producer, and screenwriter. In 2010, Spielberg and Hanks were executive producers on the HBO miniseries The Pacific.

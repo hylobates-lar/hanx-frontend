@@ -2,11 +2,12 @@ import React from 'react';
 import {Route, Switch, Link} from 'react-router-dom';
 import NavBar from './components/NavBar';
 
-// import './App.css';
+import './App.css';
 import MovieContainer from './components/MovieContainer';
 import ItemContainer from './components/ItemContainer';
 import Bio from './components/Bio';
 import MovieShowPage from './components/MovieShowPage';
+import Cart from './components/Cart';
 
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
           <Route exact path='/items'  component={ItemContainer} />
           <Route exact path='/movies/:id' component={MovieShowPage}/>
         </Switch>
+        <Cart />
 
       </div>
       )

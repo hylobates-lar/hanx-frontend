@@ -1,0 +1,35 @@
+#modal {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  
+  }
+  
+  #cart {
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    margin: 20vh auto 0;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 1.1s ease-out;  
+  }
+
+  .actions {
+    border-top: 1px solid #ccc;
+    background: #eee;
+    padding: 0.5rem 1rem;
+}
+
+.toggle-button {
+    border: 0;
+    background: #78f89f;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1;
+}

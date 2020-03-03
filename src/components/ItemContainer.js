@@ -21,7 +21,6 @@ class ItemContainer extends React.Component {
   render() {
     return (
         <div> 
-            <h2>Hello from ItemContainer</h2>
             {this.state.items.map(item => {
                 return < ItemCard item={item} key={item.id} />    
             })}
