@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import NavBar from './components/NavBar';
 
 import './App.css';
@@ -12,7 +12,65 @@ import Cart from './components/Cart';
 
 class App extends React.Component {
 
- 
+  state = {
+    user: {
+      items: [],
+      name: "",
+      id: 0
+    },
+    token: ""
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem("token")) {
+      fetch("http://localhost:3000/persist", {
+        headers: {
+          "Authorization": `Bearer ${localStorage.token}`
+        }
+      })
+      .then(r => r.json())
+      .then(this.handleResp)
+    }
+  }
+
+  addOneItem = (item) => {
+
+  }
+
+  handleResp = (resp) => {
+    if (resp.user) {
+      localStorage.token = resp.token
+      this.setState(resp, () => {
+        this.props.history.push("/")
+      })
+    } else {
+      alert(resp.error)
+    }
+  }
+
+  handleLoginSubmit = (userInfo) => {
+    return fetch (`http://localhost:3000/login`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then(res => res.json())
+    .then(this.handleResp)
+  }
+
+  handleRegisterSubmit = (userInfo) => {
+    return fetch (`http://localhost:3000/users`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then(res => res.json())
+    .then(this.handleResp)
+  }
 
   render() {
     return (
@@ -34,4 +92,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default withRouter(App);

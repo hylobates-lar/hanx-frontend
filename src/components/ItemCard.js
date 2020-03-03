@@ -14,6 +14,17 @@ class ItemCard extends React.Component {
       })
   }
 
+  addToCart = (e) => {
+      e.preventDefault()
+      fetch('http://localhost:3000/items', {
+          method: "POST",
+          headers: {
+              'content-type': "application/json"
+          },
+          body: JSON.stringify(this.props.item)
+      })
+  }
+
 
 
   render() {

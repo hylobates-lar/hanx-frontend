@@ -9,6 +9,9 @@ class ItemContainer extends React.Component {
   }
 
   componentDidMount() {
+    if (!this.props.token) {
+      this.props.history.push('/login')
+    }
      fetch("http://localhost:3000/items")
         .then(r => r.json())
         .then(itemData => {
