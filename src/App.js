@@ -8,9 +8,23 @@ import ItemContainer from './components/ItemContainer';
 import Bio from './components/Bio';
 import MovieShowPage from './components/MovieShowPage';
 import Cart from './components/Cart';
+import Login from './components/Login';
+import { withRouter } from 'react-router';
 
 
 class App extends React.Component {
+
+  state = {
+    currentUser: {}
+    
+  }
+
+  setCurrentUser = (data) => {
+    this.setState({
+      currentUser: data
+    })
+  }
+
 
  
 
@@ -18,14 +32,26 @@ class App extends React.Component {
     return (
       
       <div className='app'>
-        <NavBar />
+        <NavBar currentUser={this.state.currentUser}/>
         <Switch>
+          <Route exact path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} routerProps={props} />} />
+          <Route exact path='/cart' render={() => {
+            return this.state.currentUser ? (
+              <Cart currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+            ) : (
+              <Login setCurrentUser={this.setCurrentUser} />
+            )
+          }} />
           <Route exact path='/movies'  component={MovieContainer} />
           <Route exact path='/bio'  component={Bio} />
-          <Route exact path='/items'  component={ItemContainer} />
+          <Route exact path='/items'  render={() => {
+            return this.state.currentUser ? (
+              <ItemContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
+              ) : (<ItemContainer />) 
+          }} />
           <Route exact path='/movies/:id' component={MovieShowPage}/>
         </Switch>
-        <Cart />
+        
 
       </div>
       )
@@ -34,4 +60,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default withRouter(App);
