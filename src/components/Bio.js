@@ -4,8 +4,10 @@ class Bio extends React.Component {
 
     render () {
         return (
-            <div class="bio-container">
+            <div className="bio-container">
+                
                 <img id="bio-image" src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-17205-20121120-tom-hanks-1169-624x420-1353452177.jpg?resize=1800,1200&w=1200" alt="T.Hanks"/>
+               
                 <div id="bio-content">
                 <p>Thomas Jeffrey Hanks (born July 9, 1956) is an American actor and filmmaker. Hanks is known for his comedic and dramatic roles in such films as Splash (1984), Bachelor Party (1984), Big (1988), Turner & Hooch (1989), A League of Their Own (1992), Sleepless in Seattle (1993), Forrest Gump (1994), Apollo 13 (1995), You've Got Mail (1998), The Green Mile (1999), Cast Away (2000), Road to Perdition (2002), Cloud Atlas (2012), Captain Phillips (2013), Saving Mr. Banks (2013), Sully (2016), and A Beautiful Day in the Neighborhood (2019). He has also starred in the Robert Langdon films, and he voices Sheriff Woody in the Toy Story film series. He is one of the most popular and recognizable film stars worldwide, and is widely regarded as an American cultural icon.</p>
                 

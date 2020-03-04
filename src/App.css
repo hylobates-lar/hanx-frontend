@@ -5,11 +5,20 @@ body {
   
   #header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background: rgb(90, 107, 151);
-    opacity: .8;
     height: 7rem;
     padding: 1rem;
+  }
+
+  #cart-button {
+    border: 0;
+    background: #78f89f;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    line-height: 1;
+
   }
 
 
@@ -19,11 +28,13 @@ body {
     display: flex;
 }
 
+
 #bio-image {
-    width: 35rem;
+    width: 30rem;
     padding: 20px;
     background-position: center;
-    background-size: contain; 
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #bio-content {
@@ -37,6 +48,8 @@ body {
 
 #movie-container {
     margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .movie-card {
@@ -57,10 +70,20 @@ body {
     background-size: contain; 
   }
 
+/* movie show page */
+
+.movie-show {
+    padding: 20px;
+    display: flex;
+    
+}
+
 /* merch items container */
   
   #item-container {
     margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .item-card {
@@ -68,17 +91,23 @@ body {
     border: grey solid 1px;
     padding: 1rem;
     width: 20rem;
-    height: 25rem;
+    height: 27rem;
     display: inline-grid;
     margin: 1rem 2rem;
     box-shadow: 3px 4px #afafaf
   }
+
+  .image-container {
+    height: 24rem;
+    width: 20rem;
+    /* vertical-align: middle; */
+  }
   
   .item-image {
-    /* height: 100%; */
-    width: 20rem;
     background-position: center;
-    background-size: contain; 
+    max-height: 100%;
+    max-width: 100%;
+    /* vertical-align: middle;  */
   }
 
 

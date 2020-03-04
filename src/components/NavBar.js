@@ -31,7 +31,7 @@ class NavBar extends React.Component {
                 
                 
                 <Cart viewCart={this.state.viewCart} onClose={this.showModal}/>
-                <button onClick={e => {this.showModal()}}>View Cart</button>
+                <button id="cart-button" onClick={e => {this.showModal()}}>View Cart</button>
             </div>
         )
     }

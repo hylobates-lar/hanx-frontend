@@ -22,7 +22,7 @@ class ItemCard extends React.Component {
     return (
         <div className="item-card" onClick={this.handleClick}> 
 
-            <div >
+            <div className="image-container">
                 <img className="item-image" src={item.image} alt={item.name} />
             </div>
             <div className="content">

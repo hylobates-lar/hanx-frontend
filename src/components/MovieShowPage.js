@@ -23,21 +23,19 @@ class MovieShowPage extends React.Component {
         let movie = this.state.movieRendered
         console.log(movie)
         return ( 
-            <div className="movie show"> 
-            <h1>Movie Show Page</h1>
+            <div>  
+                <h1>{movie.title}</h1>
 
-            <div className="image">
-                <img src={movie.image} alt={movie.title} />
-            </div>
-            
-                <div className="header">{movie.title}</div>
-           
-                <div className="content">
-                    <p>Release Year: {movie.release_year}</p>
-                    <p>Director: {movie.director}</p>
-                    <p>Summary: {movie.storyline}</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bLvqoHBptjg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
-                    <Link to='/movies'>Back to Movies</Link>
+                <div className="movie-show">
+                    <img className="movie-image" src={movie.image} alt={movie.title} />
+                
+                    <div className="content">
+                        <p>Release Year: {movie.release_year}</p>
+                        <p>Director: {movie.director}</p>
+                        <p>Summary: {movie.storyline}</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bLvqoHBptjg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                        <Link to='/movies'>Back to Movies</Link>
+                    </div>
                 </div>
                 
         </div>

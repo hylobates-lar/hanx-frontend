@@ -14,7 +14,7 @@ class ItemContainer extends React.Component {
         .then(itemData => {
             this.setState({
                 items: itemData
-            })
+            }, () => console.log(this.state))
         }) 
   }
 
