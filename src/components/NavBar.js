@@ -28,9 +28,11 @@ class NavBar extends React.Component {
                     <Link to='/bio'>Bio</Link>
 
                     <Link to='/items'>Items</Link>
+
+                    <Link to='/login'>Login</Link>
                 
                 
-                <Cart viewCart={this.state.viewCart} onClose={this.showModal}/>
+                <Cart viewCart={this.state.viewCart} onClose={this.showModal} currentUser={this.props.currentUser}/>
                 <button id="cart-button" onClick={e => {this.showModal()}}>View Cart</button>
             </div>
         )

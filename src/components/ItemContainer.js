@@ -14,15 +14,16 @@ class ItemContainer extends React.Component {
         .then(itemData => {
             this.setState({
                 items: itemData
-            }, () => console.log(this.state))
+            })
         }) 
   }
 
   render() {
+   
     return (
         <div id="item-container"> 
             {this.state.items.map(item => {
-                return < ItemCard item={item} key={item.id} />    
+                return < ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
             })}
         </div>
     )
