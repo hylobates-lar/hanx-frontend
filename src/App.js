@@ -10,6 +10,8 @@ import MovieShowPage from './components/MovieShowPage';
 import Cart from './components/Cart';
 import Login from './components/Login';
 import { withRouter } from 'react-router';
+import {Layout, Menu, Typography} from 'antd';
+const {Header, Content} = Layout;
 
 
 class App extends React.Component {
@@ -38,17 +40,7 @@ class App extends React.Component {
   //   .then(data => this.setCurrentUser(data))
   // }
 
-  // deleteFromCart = (idFromChild) => {
-  //   // let filteredArray = this.state.cereals.filter(cereal => cereal.id !== idFromChild)
-  //   let filteredArray = this.state.currentUser.items.filter(item => item.id !== idFromChild)
-  //   console.log(filteredArray)
-  //   // this.setState({
-  //   //   currentUser.items: filteredArray
-  //   // })
-  //   // this.setState({
-  //   //   cereals: filteredArray
-  //   // })
-  // }
+
 
   render() {
     return (
@@ -73,8 +65,7 @@ class App extends React.Component {
           }} />
           <Route exact path='/movies/:id' component={MovieShowPage}/>
         </Switch>
-        
-
+  
       </div>
       )
   }

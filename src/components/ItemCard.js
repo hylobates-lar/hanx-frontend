@@ -37,9 +37,7 @@ class ItemCard extends React.Component {
     
   }
 
-    // sendCartData = () => {
-    //     this.props.setCartItems(this.props.currentcartData.items)
-    // }
+
 
   render() {
     let item = this.props.item
@@ -48,21 +46,7 @@ class ItemCard extends React.Component {
         textAlign: 'center',
     };
     return (
-        // <div className="item-card" > 
-        //     <div className="image-container" >
-        //         <img className="item-image" src={item.image} alt={item.name} onClick={this.handleClick}/>
-        //     </div>
-        //     <div className="content">
-        //         <div className="header">{item.name}</div>
-        //     </div>
-        //     {this.state.showMore ? 
-        //         <div className="extra content">
-        //             <p>Price: ${item.price}</p>
-        //             <p>{item.description}</p>
-        //         </div>
-        //         : null }
-        //     <button id="cart-button" onClick={this.addToCart}>Add to Cart</button>
-        // </div>
+  
         <Card
             style={gridStyle}
             cover={<img className="item-image" alt={item.name} src={item.image}/>}

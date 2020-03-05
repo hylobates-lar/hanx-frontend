@@ -4,6 +4,8 @@ body {
     margin: 0;
     font-family: monospace;
   }
+
+
   
   #header {
     display: flex;
@@ -11,6 +13,10 @@ body {
     background: rgb(90, 107, 151);
     height: 7rem;
     padding: 1rem;
+  }
+
+  #logo {
+    font-family: 'Bungee Shade', cursive;
   }
 
   #cart-button {
@@ -28,6 +34,7 @@ body {
 
 .bio-container {
     display: flex;
+   
 }
 
 
@@ -35,14 +42,28 @@ body {
     width: 30rem;
     padding: 20px;
     background-position: center;
-    max-height: 100%;
-    max-width: 100%;
+    /* max-height: 100%; */
+    /* max-width: 100%; */
+    /* background: green; */
+    margin-left: auto;
 }
 
+/* .ant-carousel .slick-slide {
+  background: #364d79;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+} */
+
+
+
 #bio-content {
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
+    max-width: 50rem;
+    /* background: red; */
+    margin-right: auto;
     
 }
 
@@ -67,7 +88,7 @@ body {
   }
 
   .movie-image {
-    max-height: 25rem;
+    max-height: 100%;
     max-width: 100%;
     width: auto;
     margin-left: auto;
@@ -84,6 +105,30 @@ body {
     padding: 20px;
     display: flex;
     
+}
+
+#movie-poster {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  /* background: red; */
+  justify-content: flex-start;
+  
+}
+
+.movie-show-image {
+  width: 19rem;
+  height: 27rem;
+  border: rgb(207, 207, 207) solid 1px;
+  box-shadow: 3px 4px #afafaf;
+  margin-bottom: 20px;
+}
+
+.movie-show-content {
+  padding: 20px;
+  width: 50rem;
+  /* background: green; */
+  
 }
 
 /* merch items container */
