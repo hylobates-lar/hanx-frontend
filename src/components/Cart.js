@@ -1,12 +1,11 @@
 import React from 'react';
 import App from '../App';
+import {Avatar, Button, Drawer, List} from 'antd';
+import {DeleteOutlined} from '@ant-design/icons';
 import {Route, Link} from 'react-router-dom';
 
 
 class Cart extends React.Component {
-
-  
-  
 
     onClose = (e) => {
         this.props.onClose && this.props.onClose(e);
@@ -38,19 +37,34 @@ class Cart extends React.Component {
             return null;
         }
         return (
-            <div id="modal" >
-                <div id="cart">
-                <h2>{this.props.currentUser.name}' Cart</h2>
+            // <div id="modal" >
+            //     <div id="cart">
+            //     <h2>{this.props.currentUser.name}' Cart</h2>
                 
-                {this.props.currentUser.items.map(item => 
-                    <p>{item.name} <button id={item.id} onClick={this.deleteFromCart}>X</button></p>)}
-                <div className="actions">
-                    <button className="toggle-button" onClick={e => {this.onClose(e)}}>Close</button>
-                </div>
-                </div> 
-            </div>  
+            //     {this.props.currentUser.items.map((item, i) => 
+            //         <p key={i}>{item.name} <button id={item.id} onClick={this.deleteFromCart}>X</button></p>)}
+            //     <div className="actions">
+            //         <Button className="toggle-button" onClick={e => {this.onClose(e)}}>Close</Button>
+            //     </div>
+            //     </div> 
+            // </div>  
                             
-
+        <Drawer
+          title="Cart"
+          placement="right"
+          width="400px"
+          onClose={this.onClose}
+          visible={this.props.viewCart}
+        >
+            <List
+                dataSource={this.props.currentUser.items}
+                renderItem={(item, i) => (
+                    <List.Item>
+                        <List.Item.Meta avatar={<Avatar shape="square" src={item.image} />} title={<p>{item.name} <DeleteOutlined onClick={this.deleteFromCart} /></p>} />
+                    </List.Item>
+                )}
+            />
+        </Drawer>
            
         )
     }

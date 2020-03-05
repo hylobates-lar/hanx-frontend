@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemCard from './ItemCard';
-
+import {Col, Row} from 'antd';
 
 class ItemContainer extends React.Component {
 
@@ -22,9 +22,15 @@ class ItemContainer extends React.Component {
    
     return (
         <div id="item-container"> 
-            {this.state.items.map(item => {
-                return < ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
+          <Row gutter={[48, 24]}>
+            {this.state.items.map((item, i) => {
+                return (
+                  <Col span={8}>
+                    <ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
+                  </Col>
+                )
             })}
+          </Row>
         </div>
     )
   }
