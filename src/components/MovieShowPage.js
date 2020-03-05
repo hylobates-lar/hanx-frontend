@@ -1,6 +1,5 @@
 import React from 'react';
-import MovieContainer from './MovieContainer';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class MovieShowPage extends React.Component {
 

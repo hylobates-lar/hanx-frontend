@@ -1,8 +1,6 @@
 import React from 'react';
-import App from '../App';
-import {Avatar, Button, Drawer, List, message} from 'antd';
+import {Avatar, Drawer, List, message} from 'antd';
 import {DeleteOutlined} from '@ant-design/icons';
-import {Route, Link} from 'react-router-dom';
 
 
 class Cart extends React.Component {
@@ -48,7 +46,6 @@ class Cart extends React.Component {
       }
 
     render(){
-       console.log(this.props.currentUser.carts_items)
         if(!this.props.viewCart){
             return null;
         }
