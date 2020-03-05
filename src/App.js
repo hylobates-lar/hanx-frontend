@@ -10,6 +10,8 @@ import MovieShowPage from './components/MovieShowPage';
 import Cart from './components/Cart';
 import Login from './components/Login';
 import { withRouter } from 'react-router';
+import {Layout, Menu, Typography} from 'antd';
+const {Header, Content} = Layout;
 
 
 class App extends React.Component {
@@ -39,43 +41,36 @@ class App extends React.Component {
     .then(data => this.setCurrentUser(data))
   }
 
-  // deleteFromCart = (idFromChild) => {
-  //   // let filteredArray = this.state.cereals.filter(cereal => cereal.id !== idFromChild)
-  //   let filteredArray = this.state.currentUser.items.filter(item => item.id !== idFromChild)
-  //   console.log(filteredArray)
-  //   // this.setState({
-  //   //   currentUser.items: filteredArray
-  //   // })
-  //   // this.setState({
-  //   //   cereals: filteredArray
-  //   // })
-  // }
+
 
   render() {
     return (
-      
-      <div className='app'>
-        <NavBar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
-        <Switch>
-          <Route exact path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} routerProps={props} />} />
-          <Route exact path='/cart' render={() => {
-            return this.state.currentUser ? (
-              <Cart currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
-            ) : (
-              <Login setCurrentUser={this.setCurrentUser} />
-            )
-          }} />
-          <Route exact path='/movies'  component={MovieContainer} />
-          <Route exact path='/bio'  component={Bio} />
-          <Route exact path='/items'  render={() => {
-            return this.state.currentUser ? (
-              <ItemContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
-              ) : (<ItemContainer />) 
-          }} />
-          <Route exact path='/movies/:id' component={MovieShowPage}/>
-        </Switch>
-        
+      <div >
+          
+          
+          <NavBar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
+          
 
+          
+            <Switch>
+              <Route exact path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} routerProps={props} />} />
+              <Route exact path='/cart' render={() => {
+                return this.state.currentUser ? (
+                  <Cart currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+                ) : (
+                  <Login setCurrentUser={this.setCurrentUser} />
+                )
+              }} />
+              <Route exact path='/movies'  component={MovieContainer} />
+              <Route exact path='/bio'  component={Bio} />
+              <Route exact path='/items'  render={() => {
+                return this.state.currentUser ? (
+                  <ItemContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
+                  ) : (<ItemContainer />) 
+              }} />
+              <Route exact path='/movies/:id' component={MovieShowPage}/>
+            </Switch>   
+        
       </div>
       )
   }

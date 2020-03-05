@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieContainer from './MovieContainer';
 import {Route, Link} from 'react-router-dom';
+import {Layout, Card, Content, Typography} from 'antd';
 
 class MovieShowPage extends React.Component {
 
@@ -24,21 +25,27 @@ class MovieShowPage extends React.Component {
         console.log(movie)
         return ( 
             <div>  
-                <h1>{movie.title}</h1>
 
                 <div className="movie-show">
-                    <img className="movie-image" src={movie.image} alt={movie.title} />
-                
-                    <div className="content">
-                        <p>Release Year: {movie.release_year}</p>
-                        <p>Director: {movie.director}</p>
-                        <p>Summary: {movie.storyline}</p>
-                        <iframe width="560" height="315" src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                    <div id="movie-poster">
+                        <img className="movie-show-image" src={movie.image} alt={movie.title} />
                         <Link to='/movies'>Back to Movies</Link>
+                    </div>
+                    {/* <Card
+                        cover={<img className="movie-show-image" alt={movie.title} src={movie.image}/>}
+                        hoverable={true}
+                        >
+                    </Card> */}
+                    <div className="movie-show-content">
+                    <Typography.Title id="movie-title">{movie.title}</Typography.Title>
+                        <p><b>Release Year:</b> {movie.release_year}</p>
+                        <p><b>Director:</b> {movie.director}</p>
+                        <p><b>Summary:</b> {movie.storyline}</p>
+                        <iframe width="896" height="504" src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                     </div>
                 </div>
                 
-        </div>
+            </div>
         )
     }
 }
