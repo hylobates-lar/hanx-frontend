@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import MovieShowPage from './MovieShowPage';
 import {Col, Row} from 'antd';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 
 class MovieContainer extends React.Component {
