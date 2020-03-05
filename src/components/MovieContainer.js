@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 import MovieShowPage from './MovieShowPage';
+import {Col, Row} from 'antd';
 import {Route, Switch, Link} from 'react-router-dom';
 
 
@@ -36,9 +37,15 @@ class MovieContainer extends React.Component {
     return (
         <div id="movie-container"> 
             
-            {this.state.movies.map(movie => {
-                return < MovieCard movie={movie} key={movie.id} /> 
+          <Row gutter={[48, 24]}>
+            {this.state.movies.map((movie) => {
+                return (
+                    <Col key={movie.id} xs={8} lg={6}>
+                        < MovieCard movie={movie} key={movie.id} /> 
+                    </Col>
+                )
             })}
+            </Row>
             <Switch>
                 <Route path="/movies/:id" render={this.movieToRender} />
             </Switch>
