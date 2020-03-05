@@ -1,7 +1,6 @@
 import React from 'react';
-import MovieShowPage from './MovieShowPage';
-import {Route, Link} from 'react-router-dom';
-import {Button, Card} from 'antd';
+import {Link} from 'react-router-dom';
+import {Card} from 'antd';
 
 
 
