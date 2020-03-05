@@ -56,7 +56,7 @@ class MovieCard extends React.Component {
             <Card.Meta title={movie.title} description={
                 <>
                     <p>{movie.release_year}</p>
-                    <p>{movie.description}</p>
+                    <p id="description">{movie.description}</p>
                     
                 </>
             } />

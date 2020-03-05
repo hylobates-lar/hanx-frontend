@@ -42,7 +42,7 @@ class NavBar extends React.Component {
                         <Button onClick={this.showModal}>Cart <ShoppingCartOutlined /></Button>
                     </Badge>
                 </Menu>
-                <Cart viewCart={this.state.viewCart} onClose={this.showModal} currentUser={this.props.currentUser}/>
+                <Cart viewCart={this.state.viewCart} onClose={this.showModal} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
             </>
         )
     }

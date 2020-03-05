@@ -33,7 +33,7 @@ class MovieShowPage extends React.Component {
                         <p>Release Year: {movie.release_year}</p>
                         <p>Director: {movie.director}</p>
                         <p>Summary: {movie.storyline}</p>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bLvqoHBptjg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                        <iframe width="560" height="315" src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                         <Link to='/movies'>Back to Movies</Link>
                     </div>
                 </div>
