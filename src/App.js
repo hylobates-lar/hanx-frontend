@@ -26,19 +26,19 @@ class App extends React.Component {
     })
   }
 
-  componentDidMount = () => {
-    let user = {name: "Tom Hanks"}
-    fetch("http://localhost:3000/login", {
-      method: "POST",
-      headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-    .then(r => r.json())
-    .then(data => this.setCurrentUser(data))
-  }
+  // componentDidMount = () => {
+  //   let user = {name: "Tom Hanks"}
+  //   fetch("http://localhost:3000/login", {
+  //     method: "POST",
+  //     headers: {
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json'
+  //     },
+  //     body: JSON.stringify(user)
+  //   })
+  //   .then(r => r.json())
+  //   .then(data => this.setCurrentUser(data))
+  // }
 
 
 

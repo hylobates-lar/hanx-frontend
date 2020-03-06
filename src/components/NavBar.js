@@ -22,8 +22,8 @@ class NavBar extends React.Component {
         return ( 
         <div>
             {/* <div className="logo"><Typography.Title>HANX!</Typography.Title></div> */}
-            <Typography.Title id="logo" >HANX!</Typography.Title>
-            <Menu className="nav-bar" mode="horizontal" defaultSelectedKeys={['2']}>
+            <Typography.Title id="logo" style={{backgroundColor:'#20B2AA'}}  >HANX!</Typography.Title>
+            <Menu className="nav-bar" mode="horizontal" defaultSelectedKeys={['2']} style={{backgroundColor:'#20B2AA'}}>
                 <Menu.Item key="movies"><Link to='/movies'>Movies</Link></Menu.Item>
                 <Menu.Item key="bio"><Link to='/bio'>Bio</Link></Menu.Item>
                 <Menu.Item key="merch"><Link to='/items'>Merch</Link></Menu.Item>
