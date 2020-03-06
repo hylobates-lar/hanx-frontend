@@ -58,7 +58,7 @@ class Cart extends React.Component {
         }
         return (
             <Drawer
-            title={`${this.props.currentUser.name}' Cart`}
+            title={`${this.props.currentUser.name}'s Cart`}
             placement="right"
             width="400px"
             onClose={this.onClose}
