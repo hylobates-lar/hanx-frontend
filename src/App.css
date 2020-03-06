@@ -17,6 +17,13 @@ body {
 
   #logo {
     font-family: 'Bungee Shade', cursive;
+    text-align: center;
+    margin: .5em 0 0;
+  }
+
+  .nav-bar {
+    text-align: center;
+    line-height: '64px';
   }
 
   #cart-button {
@@ -32,39 +39,20 @@ body {
 
 /* bio page */
 
-.bio-container {
-    display: flex;
-   
-}
-
-
-#bio-image {
-    width: 30rem;
-    padding: 20px;
-    background-position: center;
-    /* max-height: 100%; */
-    /* max-width: 100%; */
-    /* background: green; */
-    margin-left: auto;
-}
-
-/* .ant-carousel .slick-slide {
-  background: #364d79;
-  height: 50px;
+.ant-carousel .slick-slide {
+  max-width: 100%;
   line-height: 50px;
   overflow: hidden;
-} */
+}
+
+.ant-carousel .slick-slide img {
+  max-width: 100%;
+}
 
 
 
 #bio-content {
-    padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 50rem;
-    /* background: red; */
-    margin-right: auto;
-    
+    padding: 30px;    
 }
 
 /* movies container */
@@ -102,9 +90,7 @@ body {
 /* movie show page */
 
 .movie-show {
-    padding: 20px;
-    display: flex;
-    
+    padding: 30px;
 }
 
 #movie-poster {
@@ -132,7 +118,11 @@ body {
 }
 
 /* merch items container */
-  
+  .spinner {
+    display: block;
+    margin: 2rem auto;
+  }
+
   #item-container {
     margin: 2rem;
     display: flex;

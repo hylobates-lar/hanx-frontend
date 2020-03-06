@@ -1,23 +1,11 @@
 import React from 'react';
-import {message} from 'antd';
-
+import {message, Col, Form, Input, Button, Row, Typography} from 'antd';
+import {withRouter} from 'react-router-dom';
 
 class Login extends React.Component {
-
-    state = {
-        name: "",
-        newUser: ""
-    }
-
-    handleOnChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-    handleSubmit = (e) => {
-        e.preventDefault()
-        let user = {name: this.state.name}
+    handleSubmit = (values) => {
+        console.log(values)
+        let user = {name: values.name}
 
         fetch("http://localhost:3000/login", {
             method: "POST",
@@ -30,11 +18,11 @@ class Login extends React.Component {
         .then(r => r.json())
         .then(data => this.props.setCurrentUser(data))
         .then(message.success("Logging in...", 3))
+        .then(this.props.history.push('/movies'))
     }
 
-    handleCreate = (e) => {
-        e.preventDefault()
-        let user = {name: this.state.newUser}
+    handleCreate = (values) => {
+        let user = {name: values.name}
 
         fetch("http://localhost:3000/users", {
             method: "POST",
@@ -47,31 +35,77 @@ class Login extends React.Component {
         .then(r => r.json())
         .then(data => this.props.setCurrentUser(data))
         .then(message.success("Successfully created an account", 3))
-        // .then(this.props.history.push('/bio'))
+        .then(this.props.history.push('/bio'))
     }
 
     render(){
         let loginPage
         const makeCurrentUserEmpty = {}
         if (this.props.currentUser.name === undefined) {
-            console.log(this.props.currentUser)
             loginPage = <>
-            <form onSubmit={this.handleSubmit} >
-                <label>Login name:</label>
-                <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
-                <input type="submit" value="Login"/>            
-            </form> 
-            <form onSubmit={this.handleCreate} >
-                <label>New user? Enter your name here:</label>
-                <input type="text" name="newUser" value={this.state.newUser} onChange={this.handleOnChange} />
-                <input type="submit" value="Create"/>            
-            </form>
+            <Row justify="center" style={{margin: '3em 0 2em'}}>
+            <Form
+                name="returning"
+                layout="inline"
+                onFinish={this.handleSubmit}
+                >
+                <Form.Item
+                    label="Returning User:"
+                    name="name"
+                    rules={[
+                    {
+                        required: true,
+                        message: 'Please input your name!',
+                    },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
+            </Row>
+            <Row justify="center"   >
+            <Form
+                name="new"
+                layout="inline"
+                onFinish={this.handleCreate}
+                >
+                <Form.Item
+                    label="New user? Enter your name here:"
+                    name="name"
+                    rules={[
+                    {
+                        required: true,
+                        message: 'Please input your name!',
+                    },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
+            </Row>
             </>
         } else {
-            loginPage = <div>
-            <h1>How dare you want to log out of the HANX!?</h1>
-            <button onClick={() => this.props.setCurrentUser(makeCurrentUserEmpty)}>Logout</button>
-            </div>
+            // loginPage = <div>
+            // <h1>How dare you want to log out of the HANX!?</h1>
+            // <button onClick={() => this.props.setCurrentUser(makeCurrentUserEmpty)}>Logout</button>
+            // </div>
+            loginPage = (
+            <Col style={{marginTop: '4em', textAlign: 'center'}}>
+                <Typography.Title style={{marginBottom: '1em'}} level={4}>How dare you want to log out of the HANX!?</Typography.Title>
+                <Button type="danger" onClick={() => this.props.setCurrentUser(makeCurrentUserEmpty)}>
+                    Logout
+                </Button>
+            </Col>)
         }
         return (
             <div>
@@ -81,4 +115,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -1,7 +1,6 @@
 import React from 'react';
-import MovieContainer from './MovieContainer';
 import {Link} from 'react-router-dom';
-import {Layout, Card, Content, Typography} from 'antd';
+import {Card, Col, Row, Typography} from 'antd';
 
 class MovieShowPage extends React.Component {
 
@@ -24,27 +23,26 @@ class MovieShowPage extends React.Component {
         let movie = this.state.movieRendered
         console.log(movie)
         return ( 
-            <div>  
-
-                <div className="movie-show">
-                    <div id="movie-poster">
-                        <img className="movie-show-image" src={movie.image} alt={movie.title} />
-                        <Link to='/movies'>Back to Movies</Link>
-                    </div>
-                    {/* <Card
-                        cover={<img className="movie-show-image" alt={movie.title} src={movie.image}/>}
-                        hoverable={true}
-                        >
-                    </Card> */}
-                    <div className="movie-show-content">
-                    <Typography.Title id="movie-title">{movie.title}</Typography.Title>
+            <div> 
+                <Row className="movie-show" gutter={64}>
+                    <Col xs={24} md={{offset: 2, span: 5}}>
+                        {/* <img className="movie-show-image" src={movie.image} alt={movie.title} /> */}
+                        <Card bordered={false} cover={<img alt={movie.title} src={movie.image}/>}/>
+                    </Col>
+                    <Col xs={24} md={14}>
+                        <Typography.Title id="movie-title">{movie.title}</Typography.Title>
                         <p><b>Release Year:</b> {movie.release_year}</p>
                         <p><b>Director:</b> {movie.director}</p>
                         <p><b>Summary:</b> {movie.storyline}</p>
-                        <iframe width="896" height="504" src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
-                    </div>
-                </div>
-                
+                        <Link to='/movies'>Back to Movies</Link>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={{span: 16, offset: 4}}>
+                    <iframe width="896" height="504" title={movie.title} src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                    </Col>
+                </Row>
+
             </div>
         )
     }

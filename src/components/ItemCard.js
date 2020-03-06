@@ -32,7 +32,7 @@ class ItemCard extends React.Component {
     .then(r => r.json())
     .then((cartData) => {
         this.props.setCurrentUser(cartData)
-        message.success(`${item.name} has been added to your cart`)
+        message.success(`${item.name} has been added to your cart`, 2)
     })
     
   }
