@@ -23,7 +23,7 @@ class ItemCard extends React.Component {
     
     if (user.id !== undefined) {
         let newItem = {item_id: item.id, cart_id: cart.id}
-        fetch(`http://localhost:3000/carts_items`, {
+        fetch(`https://hanx-api.herokuapp.com/carts_items`, {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',

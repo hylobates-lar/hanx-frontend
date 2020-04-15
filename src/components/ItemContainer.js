@@ -10,7 +10,7 @@ class ItemContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/items")
+        fetch("https://hanx-api.herokuapp.com/items")
         .then(r => r.json())
         .then(itemData => {
             this.setState({
