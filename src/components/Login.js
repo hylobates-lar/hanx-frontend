@@ -3,6 +3,7 @@ import {message, Col, Form, Input, Button, Row, Typography} from 'antd';
 import {withRouter} from 'react-router-dom';
 
 class Login extends React.Component {
+    
     handleSubmit = (values) => {
         console.log(values)
         let user = {name: values.name}
@@ -95,13 +96,9 @@ class Login extends React.Component {
             </Row>
             </>
         } else {
-            // loginPage = <div>
-            // <h1>How dare you want to log out of the HANX!?</h1>
-            // <button onClick={() => this.props.setCurrentUser(makeCurrentUserEmpty)}>Logout</button>
-            // </div>
             loginPage = (
             <Col style={{marginTop: '4em', textAlign: 'center'}}>
-                <Typography.Title style={{marginBottom: '1em'}} level={4}>How dare you want to log out of the HANX!?</Typography.Title>
+                <Typography.Title style={{marginBottom: '1em'}} level={4}>How dare you want to log out of HANX!?</Typography.Title>
                 <Button type="danger" onClick={() => this.props.setCurrentUser(makeCurrentUserEmpty)}>
                     Logout
                 </Button>

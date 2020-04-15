@@ -26,7 +26,6 @@ class MovieShowPage extends React.Component {
             <div> 
                 <Row className="movie-show" gutter={64}>
                     <Col xs={24} md={{offset: 2, span: 5}}>
-                        {/* <img className="movie-show-image" src={movie.image} alt={movie.title} /> */}
                         <Card bordered={false} cover={<img alt={movie.title} src={movie.image}/>}/>
                     </Col>
                     <Col xs={24} md={14}>
