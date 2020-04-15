@@ -1,14 +1,15 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 import MovieShowPage from './MovieShowPage';
-import {Col, Row} from 'antd';
+import {Col, Row, Spin} from 'antd';
 import {Route, Switch} from 'react-router-dom';
 
 
 class MovieContainer extends React.Component {
 
     state = {
-        movies: []
+        movies: [],
+        loading: true
     }
 
     componentDidMount() {
@@ -16,7 +17,8 @@ class MovieContainer extends React.Component {
             .then(r => r.json())
             .then(movieData => {
                 this.setState({
-                    movies: movieData
+                    movies: movieData,
+                    loading: false
                 })
             }) 
     }
@@ -57,6 +59,7 @@ class MovieContainer extends React.Component {
                 <div className="sort-buttons">
                     <button onClick={this.sortByTitle}>Sort by Title</button> <button onClick={this.sortByYear}>Sort by Year</button>
                 </div>
+                <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
                 <Row gutter={[48, 24]}>
                     {this.state.movies.map((movie) => {
                         return (

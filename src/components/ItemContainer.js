@@ -33,18 +33,20 @@ class ItemContainer extends React.Component {
         return (
         <>
             <p id="disclaimer">* Please note this feature is for demo purposes only. While these items are real(!), they cannot actually be purchased here *</p>
-            <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
             <div id="item-container"> 
-                <button className="sort-buttons" onClick={this.sortByPrice}>Sort By Price</button>
-            <Row gutter={[48, 24]}>
-                {this.state.items.map((item, i) => {
-                    return (
-                    <Col span={8}>
-                        <ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
-                    </Col>
-                    )
-                })}
-            </Row>
+                <div className="sort-buttons">
+                    <button onClick={this.sortByPrice}>Sort By Price</button>
+                </div>
+                <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                <Row gutter={[48, 24]}>
+                    {this.state.items.map((item, i) => {
+                        return (
+                        <Col span={8}>
+                            <ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
+                        </Col>
+                        )
+                    })}
+                </Row>
             </div>
         </>
         )

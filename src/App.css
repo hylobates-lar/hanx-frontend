@@ -1,8 +1,21 @@
 @import '~antd/dist/antd.css';
 
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 body {
     margin: 0;
     font-family: monospace;
+}
+
+#main-content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .ant-layout-content {
@@ -19,17 +32,24 @@ body {
     color: white;
 }
 
+#footer h4 {
+    line-height: 30px;
+    margin: 0;
+}
+
 
 /* header/nav */
 
 #logo {
     font-family: 'Bungee Shade', cursive;
     text-align: center;
-    margin: .5em 0 0;
+    background-color: #20B2AA;
+    padding-top: 10px;
 }
 
 .nav-bar {
     text-align: center;
+    background-color: #20B2AA;
 }
 
 .ant-menu-horizontal > .ant-menu-item-selected, 
