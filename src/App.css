@@ -9,13 +9,18 @@ body {
     margin-bottom: 40px;
 }
 
-#header {
-    display: flex;
-    justify-content: space-between;
-    background: rgb(90, 107, 151);
-    height: 7rem;
-    padding: 1rem;
+#footer {
+    background-color: #20B2AA;
+    text-align: right;
+    padding-right: 10px;
 }
+
+#footer, a {
+    color: white;
+}
+
+
+/* header/nav */
 
 #logo {
     font-family: 'Bungee Shade', cursive;
@@ -25,16 +30,13 @@ body {
 
 .nav-bar {
     text-align: center;
-    line-height: '64px';
 }
 
-#cart-button {
-    border: 0;
-    background: #78f89f;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
-    line-height: 1;
+.ant-menu-horizontal > .ant-menu-item-selected, 
+.ant-menu-horizontal > .ant-menu-item-selected > a, 
+.ant-menu-horizontal > .ant-menu-item > a:hover {
+    color: white;
+    border-bottom: none;
 }
 
 a.link:hover {
@@ -78,6 +80,10 @@ h1.ant-typography, .ant-typography h1 {
     margin: 2rem;
     display: flex;
     flex-wrap: wrap;
+}
+
+.sort-buttons {
+    margin-bottom: 30px;
 }
 
 .movie-card {

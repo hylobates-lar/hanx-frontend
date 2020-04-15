@@ -44,7 +44,7 @@ class App extends React.Component {
             }} />
             <Route exact path='/order-success' component={OrderSuccess} />
             <Route exact path='/movies'  component={MovieContainer} />
-            <Route exact path='/bio'  component={Bio} />
+            <Route exact path='/'  component={Bio} />
             <Route exact path='/items'  render={() => {
                 return this.state.currentUser ? (
                 <ItemContainer currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
@@ -53,6 +53,9 @@ class App extends React.Component {
             <Route exact path='/movies/:id' component={MovieShowPage}/>
             </Switch>
             </Layout.Content>
+            <div id="footer">
+                <h4>created by <a href="https://github.com/hylobates-lar/hanx-frontend">@hylobates-lar + @radbahi</a> // 2020 </h4>
+            </div>
         </div>
         )
     }
