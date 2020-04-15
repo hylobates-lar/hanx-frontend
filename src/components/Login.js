@@ -8,7 +8,7 @@ class Login extends React.Component {
         console.log(values)
         let user = {name: values.name}
 
-        fetch("http://localhost:3000/login", {
+        fetch("https://hanx-api.herokuapp.com/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ class Login extends React.Component {
     handleCreate = (values) => {
         let user = {name: values.name}
 
-        fetch("http://localhost:3000/users", {
+        fetch("https://hanx-api.herokuapp.com/users", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ class MovieContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/movies")
+        fetch("https://hanx-api.herokuapp.com/movies")
             .then(r => r.json())
             .then(movieData => {
                 this.setState({

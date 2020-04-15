@@ -13,7 +13,7 @@ class Cart extends React.Component {
     deleteFromCart = (id) => {
         const foundCartItem = this.props.currentUser.carts_items.find(cartItem => cartItem.item_id === id)
         console.log(foundCartItem.id)
-        fetch(`http://localhost:3000/carts_items/${foundCartItem.id}`, {
+        fetch(`https://hanx-api.herokuapp.com/carts_items/${foundCartItem.id}`, {
             method: 'DELETE',
             })
             .then(r => r.json())
@@ -25,7 +25,7 @@ class Cart extends React.Component {
 
     checkout = () => {
         console.log("CART", this.props.currentUser.cart)
-        fetch(`http://localhost:3000/carts/${this.props.currentUser.cart.id}`, {
+        fetch(`https://hanx-api.herokuapp.com/carts/${this.props.currentUser.cart.id}`, {
             method: 'DELETE',
             })
             .then(r => r.json())
