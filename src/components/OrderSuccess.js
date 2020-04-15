@@ -5,7 +5,7 @@ class OrderSuccess extends React.Component {
     render () {
         return (
             <Col style={{marginTop: '2em', textAlign: 'center'}}>
-                <Typography.Title>Order Success!</Typography.Title>
+                <Typography.Title style={{marginBottom: '1em'}}>Order Success!</Typography.Title>
                 <img src="https://media.giphy.com/media/Xe0ncXO9LNQsw/source.gif" />
             </Col>
         )

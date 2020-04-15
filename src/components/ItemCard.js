@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import {Button, Card, message} from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 
@@ -16,33 +17,36 @@ class ItemCard extends React.Component {
   }
 
   addToCart = () => {
-    
+    let user = this.props.currentUser
     let item = this.props.item
-    let cart = this.props.currentUser.cart
-    let newItem = {item_id: item.id, cart_id: cart.id}
-
-    fetch(`http://localhost:3000/carts_items`, {
-        method: 'POST',
-        headers: {
-            'Content-Type':'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(newItem)
-    })
-    .then(r => r.json())
-    .then((cartData) => {
-        this.props.setCurrentUser(cartData)
-        message.success(`${item.name} has been added to your cart`, 2)
-    })
+    let cart = user.cart
     
+    if (user.id !== undefined) {
+        let newItem = {item_id: item.id, cart_id: cart.id}
+        fetch(`http://localhost:3000/carts_items`, {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+        .then(r => r.json())
+        .then((cartData) => {
+            this.props.setCurrentUser(cartData)
+            message.success(`${item.name} has been added to your cart`, 2)
+        })
+    } else {
+        this.props.history.push('/login')
+    }  
   }
 
 
 
   render() {
+    console.log(this.props.currentUser)
     let item = this.props.item
     const gridStyle = {
-        // height: '27rem',
         textAlign: 'center',
     };
     return (
@@ -71,4 +75,4 @@ class ItemCard extends React.Component {
 }
 
 
-export default ItemCard;
+export default withRouter (ItemCard);

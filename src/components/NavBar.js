@@ -6,22 +6,21 @@ import {ShoppingCartOutlined} from '@ant-design/icons';
 
 class NavBar extends React.Component {
 
-   state = {
-       viewCart: false
-   }
+    state = {
+        viewCart: false
+    }
 
-   showModal = (e) => {
-       this.setState({
-           viewCart: !this.state.viewCart
-       })
-   }
+    showModal = (e) => {
+        this.setState({
+            viewCart: !this.state.viewCart
+        })
+    }
 
   
 
     render(){
         return ( 
         <div>
-            {/* <div className="logo"><Typography.Title>HANX!</Typography.Title></div> */}
             <Typography.Title id="logo" style={{backgroundColor:'#20B2AA'}}  >HANX!</Typography.Title>
             <Menu className="nav-bar" mode="horizontal" defaultSelectedKeys={['2']} style={{backgroundColor:'#20B2AA'}}>
                 <Menu.Item key="movies"><Link to='/movies'>Movies</Link></Menu.Item>
@@ -33,8 +32,7 @@ class NavBar extends React.Component {
                 </Badge>
             </Menu>
             <Cart viewCart={this.state.viewCart} onClose={this.showModal} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
-        </div>
-            
+        </div>     
 
         )
     }
