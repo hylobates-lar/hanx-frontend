@@ -20,21 +20,33 @@ class ItemContainer extends React.Component {
         }) 
     }
 
+    sortByPrice = () => {
+        let sortedPriceItems = this.state.items.sort(function(a, b) {
+            return parseFloat(a.price) - parseFloat(b.price);
+        });
+        this.setState({
+            items: sortedPriceItems
+        })
+    }
+
     render() {
         return (
         <>
-            <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
             <p id="disclaimer">* Please note this feature is for demo purposes only. While these items are real(!), they cannot actually be purchased here *</p>
             <div id="item-container"> 
-            <Row gutter={[48, 24]}>
-                {this.state.items.map((item, i) => {
-                    return (
-                    <Col span={8}>
-                        <ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
-                    </Col>
-                    )
-                })}
-            </Row>
+                <div className="sort-buttons">
+                    <button onClick={this.sortByPrice}>Sort By Price</button>
+                </div>
+                <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                <Row gutter={[48, 24]}>
+                    {this.state.items.map((item, i) => {
+                        return (
+                        <Col span={8}>
+                            <ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
+                        </Col>
+                        )
+                    })}
+                </Row>
             </div>
         </>
         )

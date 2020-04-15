@@ -36,7 +36,7 @@ class Login extends React.Component {
         .then(r => r.json())
         .then(data => this.props.setCurrentUser(data))
         .then(message.success("Successfully created an account", 3))
-        .then(this.props.history.push('/bio'))
+        .then(this.props.history.push('/'))
     }
 
     render(){

@@ -1,14 +1,15 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 import MovieShowPage from './MovieShowPage';
-import {Col, Row} from 'antd';
+import {Col, Row, Spin} from 'antd';
 import {Route, Switch} from 'react-router-dom';
 
 
 class MovieContainer extends React.Component {
 
     state = {
-        movies: []
+        movies: [],
+        loading: true
     }
 
     componentDidMount() {
@@ -16,7 +17,8 @@ class MovieContainer extends React.Component {
             .then(r => r.json())
             .then(movieData => {
                 this.setState({
-                    movies: movieData
+                    movies: movieData,
+                    loading: false
                 })
             }) 
     }
@@ -33,18 +35,39 @@ class MovieContainer extends React.Component {
         }
     }
 
+    sortByTitle = () => {
+        let sortedTitleMovies = this.state.movies.sort(function(a, b) {
+            return a.title.localeCompare(b.title);
+        });
+        this.setState({
+            movies: sortedTitleMovies
+        })
+    }
+
+    sortByYear = () => {
+        let sortedYearMovies = this.state.movies.sort(function(a, b) {
+            return (a.release_year) - (b.release_year);
+        });
+        this.setState({
+            movies: sortedYearMovies
+        })
+    }
+
     render() {
         return (
-            <div id="movie-container"> 
-                
-            <Row gutter={[48, 24]}>
-                {this.state.movies.map((movie) => {
-                    return (
-                        <Col key={movie.id} xs={8} lg={6}>
-                            < MovieCard movie={movie} key={movie.id} /> 
-                        </Col>
-                    )
-                })}
+            <div id="movie-container">
+                <div className="sort-buttons">
+                    <button onClick={this.sortByTitle}>Sort by Title</button> <button onClick={this.sortByYear}>Sort by Year</button>
+                </div>
+                <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                <Row gutter={[48, 24]}>
+                    {this.state.movies.map((movie) => {
+                        return (
+                            <Col key={movie.id} xs={8} lg={6}>
+                                < MovieCard movie={movie} key={movie.id} /> 
+                            </Col>
+                        )
+                    })}
                 </Row>
                 <Switch>
                     <Route path="/movies/:id" render={this.movieToRender} />
