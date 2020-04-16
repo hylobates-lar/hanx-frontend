@@ -19,7 +19,7 @@ class Login extends React.Component {
         .then(r => r.json())
         .then(data => this.props.setCurrentUser(data))
         .then(message.success("Logging in...", 3))
-        .then(this.props.history.push('/movies'))
+        .then(this.props.history.push('/items'))
     }
 
     handleCreate = (values) => {
@@ -36,7 +36,7 @@ class Login extends React.Component {
         .then(r => r.json())
         .then(data => this.props.setCurrentUser(data))
         .then(message.success("Successfully created an account", 3))
-        .then(this.props.history.push('/'))
+        .then(this.props.history.push('/items'))
     }
 
     render(){

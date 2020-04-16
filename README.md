@@ -6,6 +6,8 @@ All of the "merch" you see is real (that's right, you really CAN buy a Tom Hanks
 
 Enjoy!
 
+[**Live Site**](https://hanx-app.herokuapp.com/)
+
 
 ## Features
 
@@ -25,10 +27,18 @@ A user can
 * "purchase" the items in their cart
 
 
-## Screenshot
+## Screenshots
+
+Bio/Home Page
 ![Screenshot](public/bio.png)
+
+Merch Page
 ![Screenshot](public/merch.png)
+
+Movies Page
 ![Screenshot](public/movies.png)
+
+Movie Show Page
 ![Screenshot](public/movie-show.png)
 
 
