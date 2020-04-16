@@ -59,11 +59,6 @@ body {
     border-bottom: none;
 }
 
-a.link:hover {
-    /*Any style you want to have link on mouse over*/
-    background-color: white;
-}
-
 
 /* bio page */
 
@@ -155,6 +150,11 @@ h1.ant-typography, .ant-typography h1 {
     width: 50rem;  
 }
 
+#trailer {
+    width: 896px;
+    height: 504px;
+}
+
 
 /* merch items container */
 
@@ -229,6 +229,10 @@ h1.ant-typography, .ant-typography h1 {
     transition: 1.1s ease-out;  
 }
 
+.ant-drawer-content-wrapper {
+    width: 400px;
+}
+
 h2 {
     border-bottom: 1px solid #ccc;
     padding: 1rem;
@@ -250,4 +254,19 @@ h2 {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
     line-height: 1;
+}
+
+
+/* mobile responsive */
+
+@media (max-width: 490px) {
+
+    #trailer {
+        width: 100%;
+        height: auto;
+    }
+
+    .ant-drawer-content-wrapper {
+        width: auto;
+    }
 }

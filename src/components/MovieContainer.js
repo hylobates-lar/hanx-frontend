@@ -65,7 +65,7 @@ class MovieContainer extends React.Component {
                 <Row gutter={[48, 24]}>
                     {this.state.movies.map((movie) => {
                         return (
-                            <Col key={movie.id} xs={8} lg={6}>
+                            <Col key={movie.id} xs={24} lg={6}>
                                 < MovieCard movie={movie} key={movie.id} /> 
                             </Col>
                         )

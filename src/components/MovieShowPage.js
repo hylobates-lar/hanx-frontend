@@ -37,8 +37,8 @@ class MovieShowPage extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={{span: 16, offset: 4}}>
-                    <iframe width="896" height="504" title={movie.title} src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                    <Col xs={{span: 20, offset: 2}} md={{span: 16, offset: 4}}>
+                        <iframe id="trailer" title={movie.title} src={movie.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                     </Col>
                 </Row>
 

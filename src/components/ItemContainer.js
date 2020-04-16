@@ -43,7 +43,7 @@ class ItemContainer extends React.Component {
                 <Row gutter={[48, 24]}>
                     {this.state.items.map((item, i) => {
                         return (
-                        <Col span={8}>
+                        <Col xs={24} lg={8}>
                             <ItemCard item={item} key={item.id} currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>    
                         </Col>
                         )

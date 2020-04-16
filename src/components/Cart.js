@@ -60,7 +60,6 @@ class Cart extends React.Component {
             <Drawer
             title={`${this.props.currentUser.name}'s Cart`}
             placement="right"
-            width="400px"
             onClose={this.onClose}
             visible={this.props.viewCart}
             footer={this.cartFooter()}
