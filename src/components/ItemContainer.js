@@ -37,7 +37,9 @@ class ItemContainer extends React.Component {
                 <div className="sort-buttons">
                     <button onClick={this.sortByPrice}>Sort By Price</button>
                 </div>
-                <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                <Row justify="center">
+                    <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                </Row>
                 <Row gutter={[48, 24]}>
                     {this.state.items.map((item, i) => {
                         return (

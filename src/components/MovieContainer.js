@@ -59,7 +59,9 @@ class MovieContainer extends React.Component {
                 <div className="sort-buttons">
                     <button onClick={this.sortByTitle}>Sort by Title</button> <button onClick={this.sortByYear}>Sort by Year</button>
                 </div>
-                <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                <Row justify="center">
+                    <Spin className="spinner" tip="Loading..." spinning={this.state.loading} />
+                </Row>
                 <Row gutter={[48, 24]}>
                     {this.state.movies.map((movie) => {
                         return (
