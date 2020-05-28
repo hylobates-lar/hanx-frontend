@@ -10,28 +10,25 @@ class Bio extends React.Component {
                 <Col xs={24} md={8} offset={1} >
                     <Carousel style={{paddingTop: '12px'}} autoplay={true} adaptiveHeight={true}>
                         <div>
-                            <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-17205-20121120-tom-hanks-1169-624x420-1353452177.jpg?resize=1800,1200&w=1200" alt="T.Hanks"/>
+                            <img src="/src/images/hanks with moustache.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="https://pbs.twimg.com/profile_images/1193951507026075648/Ot3GmqGK_400x400.jpg" alt="T.Hanks"/>
+                            <img src="/src/images/hanks running.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="https://static01.nyt.com/images/2019/11/17/arts/17tom-hanks6/17tom-hanks6-mobileMasterAt3x.jpg" alt="T.Hanks"/>
+                            <img src="/src/images/hanks with obama.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="https://www.myagecalculator.com/images/tom-hanks.jpg" alt="T.Hanks"/>
+                            <img src="/src/images/smiley hanks.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="https://vignette.wikia.nocookie.net/dreamworks/images/c/cc/62982_v9_bb.jpg/revision/latest?cb=20181117225719" alt="T.Hanks"/>
+                            <img src= "/src/images/crypt keeper hanks.jpg" alt="T.Hanks" />
                         </div>
                         <div>
-                            <img src= "https://bloody-disgusting.com/wp-content/uploads/2019/11/Tales-from-the-Crypt-Cryptkeeper-Tom-Hanks.jpg" alt="T.Hanks" />
+                            <img src= "/src/images/hanks tattoo.jpg" alt="T.Hanks" />
                         </div>
                         <div>
-                            <img src= "https://pbs.twimg.com/media/D7QFrpcUcAULYI3.jpg" alt="T.Hanks" />
-                        </div>
-                        <div>
-                            <img src="https://hips.hearstapps.com/ghk.h-cdn.co/assets/15/31/980x491/gallery-1438274306-gettyimages-93409065.jpg?resize=480:*" alt="T.Hanks" />
+                            <img src="/src/images/curly hanks.jpg" alt="T.Hanks" />
                         </div>
                     </Carousel>
                 </Col>
