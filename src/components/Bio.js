@@ -10,25 +10,25 @@ class Bio extends React.Component {
                 <Col xs={24} md={8} offset={1} >
                     <Carousel style={{paddingTop: '12px'}} autoplay={true} adaptiveHeight={true}>
                         <div>
-                            <img src="/src/images/hanks with moustache.jpg" alt="T.Hanks"/>
+                            <img src="/images/hanks with moustache.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="/src/images/hanks running.jpg" alt="T.Hanks"/>
+                            <img src="/images/hanks running.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="/src/images/hanks with obama.jpg" alt="T.Hanks"/>
+                            <img src="/images/hanks with obama.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src="/src/images/smiley hanks.jpg" alt="T.Hanks"/>
+                            <img src="/images/smiley hanks.jpg" alt="T.Hanks"/>
                         </div>
                         <div>
-                            <img src= "/src/images/crypt keeper hanks.jpg" alt="T.Hanks" />
+                            <img src= "/images/crypt keeper hanks.jpg" alt="T.Hanks" />
                         </div>
                         <div>
-                            <img src= "/src/images/hanks tattoo.jpg" alt="T.Hanks" />
+                            <img src= "/images/hanks tattoo.jpg" alt="T.Hanks" />
                         </div>
                         <div>
-                            <img src="/src/images/curly hanks.jpg" alt="T.Hanks" />
+                            <img src="/images/curly hanks.jpg" alt="T.Hanks" />
                         </div>
                     </Carousel>
                 </Col>
