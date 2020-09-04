@@ -58,7 +58,7 @@ class App extends React.Component {
                 </Layout.Content>
             </div>
             <div id="footer">
-                <h4>created by <a href="https://github.com/hylobates-lar/hanx-frontend">@hylobates-lar + @radbahi</a> // 2020 </h4>
+                <h4>{'created by'} <a href="https://github.com/hylobates-lar/hanx-frontend">@hylobates-lar + @radbahi</a> {'// 2020'} </h4>
             </div>
         </div>
         )

@@ -6,7 +6,7 @@ class OrderSuccess extends React.Component {
         return (
             <Col style={{marginTop: '2em', textAlign: 'center'}}>
                 <Typography.Title style={{marginBottom: '1em'}}>Order Success!</Typography.Title>
-                <img src="https://media.giphy.com/media/Xe0ncXO9LNQsw/source.gif" />
+                <img alt='dancing Tom Hanks gif' src="https://media.giphy.com/media/Xe0ncXO9LNQsw/source.gif" />
             </Col>
         )
     }
